@@ -1,0 +1,66 @@
+name: Website Update or Bug Report
+description: Report an issue on The WP Community Collective website.
+title: "[Website Update Report] "
+labels: [website, triage]
+body:
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: What kind of issue is this?
+      options:
+        - Accessibility
+        - Incorrect/out-of-date information
+        - Fix (bug, typo, broken link)
+        - Design/Style Change
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue-location
+    attributes:
+      label: Where on the site is this issue occurring?
+      description: Include a URL, section name, or description of where this issue is
+      placeholder: e.g., "On the About page" or "In the footer"
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue-summary
+    attributes:
+      label: Describe the issue
+      description: Please clearly describe the issue you are reporting.
+      placeholder: e.g., "Buttons have insufficient contrast between the button color and the border"
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue-fix
+    attributes:
+      label: Recommended action
+      description: If you have a solution or recommendation, please provide that here.
+      placeholder: e.g., "Change the button border to a darker shade, such as #03396c"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: issue-priority
+    attributes:
+      label: Priority Level
+      description: Please indicate the priority level you recommend for this issue.
+      options:
+        - High (needs immediate attention)
+        - Medium (important but not urgent)
+        - Low (nice to have)
+      default: Medium
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue-notes
+    attributes:
+      label: Additional Notes
+      description: Anything else we should know?
+      placeholder: Links to docs, more detail/context, etc.
+    validations:
+      required: false
