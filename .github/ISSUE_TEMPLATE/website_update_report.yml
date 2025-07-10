@@ -52,7 +52,7 @@ body:
         - High (needs immediate attention)
         - Medium (important but not urgent)
         - Low (nice to have)
-      default: Medium
+      default: 1
     validations:
       required: true
 
