@@ -1,0 +1,19 @@
+name: Add Website Issue Report to Website Management Project Board
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  add_to_project:
+    if: contains(join(github.event.issue.labels.*.name), 'website') && contains(join(github.event.issue.labels.*.name), 'triage')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add reported website issue to Website Management Project Board
+        uses: actions/add-to-project@v1
+        with:
+          project-url: https://github.com/orgs/thewpcommunitycollective/projects/6  # Replace with your actual project URL if needed
+          github-token: ${{ secrets.WEBSITE_MGMT_PERSONAL_ACCESS_TOKEN }}
+          status: "To Do"
+          labeled: false
